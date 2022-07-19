@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS `springbatch`;
+
+CREATE TABLE IF NOT EXISTS `market` (
+    `id` bigint(20) NOT NULL AUTO_INCREMENT,
+    `name` varchar(50) DEFAULT NULL,
+    `price` int(11) DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
