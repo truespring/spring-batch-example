@@ -42,7 +42,7 @@ public class BatchConfig {
     @JobScope
     public Step exampleStep() throws Exception {
         return stepBuilderFactory.get("exampleStep")
-                .<Market, Market> chunk(10)
+                .<Market, Market>chunk(10)
                 .reader(reader(null))
                 .processor(processor(null))
                 .writer(writer(null))
@@ -56,7 +56,7 @@ public class BatchConfig {
 
         Map<String, Object> parameterValues = new HashMap<>();
         parameterValues.put("price", 1000);
-        return new JpaPagingItemReaderBuilder <Market>()
+        return new JpaPagingItemReaderBuilder<Market>()
                 .pageSize(10)
                 .parameterValues(parameterValues)
                 .queryString("SELECT m FROM Market m WHERE m.price >= : price")

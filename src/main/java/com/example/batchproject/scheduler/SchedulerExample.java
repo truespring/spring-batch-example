@@ -33,7 +33,7 @@ public class SchedulerExample {
             JobParameters parameters = new JobParameters(jobParameterMap);
             JobExecution jobExecution = jobLauncher.run(job, parameters);
 
-            while(jobExecution.isRunning()) {
+            while (jobExecution.isRunning()) {
                 log.info("isRunning...");
             }
         } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException |
