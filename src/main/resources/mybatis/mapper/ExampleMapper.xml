@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="exampleMapper">
-    <insert id="saveEmployee">
-        INSERT INTO BATCH_SAMPLE_EMPLOYEE
-            (user_id, user_name, user_gender, department_code)
-        VALUES (#{userId}, #{userName}, #{userGender}, #{departmentCode}
-    </insert>
 
-    <select id="findAllFromPrice">
-        SELECT m
-        FROM Market m
-        WHERE m.price >= : price
+    <select id="findAllFromPrice" resultType="market">
+        SELECT *
+        FROM market
+        WHERE price >= #{price}
     </select>
+
+    <update id="updateFromId" parameterType="market">
+        UPDATE market
+        SET price = #{price}
+        WHERE id = #{id}
+          AND name = #{name}
+    </update>
 </mapper>

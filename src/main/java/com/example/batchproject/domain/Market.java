@@ -1,6 +1,7 @@
 package com.example.batchproject.domain;
 
 import lombok.*;
+import org.apache.ibatis.type.Alias;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
